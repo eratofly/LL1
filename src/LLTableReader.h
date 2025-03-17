@@ -35,6 +35,7 @@ public:
 		m_input = input;
 		while (true)
 		{
+			m_pathway.push_back(m_index);
 			auto& [num, symbol, guidedSet, error, pointer, stack, shift, end] = m_rows[m_index];
 			if (!guidedSet.contains(std::to_string(m_symbol)))
 			{
@@ -163,4 +164,6 @@ private:
 	TableRow m_currRow;
 	std::unordered_map<int, TableRow> m_rows;
 	std::stack<int> m_stack;
+
+	std::vector<int> m_pathway;
 };
