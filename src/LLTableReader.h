@@ -32,6 +32,7 @@ public:
 
 	bool Run(std::string const& input)
 	{
+		m_pathway.clear();
 		m_input = input;
 		while (true)
 		{
