@@ -16,7 +16,7 @@ struct TableRow
 	std::unordered_set<std::string> guidedSet;
 	bool error;
 	std::optional<int> pointer;
-	int stack;
+	std::optional<int> stack;
 	bool shift;
 	bool end;
 };
@@ -123,7 +123,7 @@ private:
 				GetGuidedSetFromString(row[2]),
 				row[3] == "+",
 				row[4].empty() ? std::nullopt : std::stoi(row[4]),
-				std::stoi(row[5]),
+				row[5].empty() ? std::nullopt : std::stoi(row[5]),
 				row[6] == "+",
 				row[7] == "+"
 			};
