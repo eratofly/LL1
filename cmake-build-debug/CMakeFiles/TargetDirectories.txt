@@ -1,0 +1,3 @@
+D:/Вова/iSpringInstitute/3/ТАиФЯ/LL/LL1/cmake-build-debug/CMakeFiles/ll1_program.dir
+D:/Вова/iSpringInstitute/3/ТАиФЯ/LL/LL1/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Вова/iSpringInstitute/3/ТАиФЯ/LL/LL1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
