@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.26)
+cmake_minimum_required(VERSION 3.22)
 project(ll1)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -12,9 +12,11 @@ target_include_directories(
 
 add_executable(ll1_program
         src/main.cpp
+        src/TableParser.h
+        src/TableParser.cpp
 )
 
-add_executable(ll1_tests
-)
+#add_executable(ll1_tests
+#)
 
-target_link_libraries(parser_tests PUBLIC catch2)
+#target_link_libraries(ll1_tests PUBLIC catch2)
