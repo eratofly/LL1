@@ -15,8 +15,7 @@ add_executable(ll1_program_1
         PrintTable.h
         ReadGrammar.cpp
         ReadGrammar.h
-        Rule.cpp
-        Rule.h
+        GrammarRules.h
         StringHelpers.cpp
         StringHelpers.h
         TableRow.h
