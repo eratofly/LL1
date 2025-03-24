@@ -11,7 +11,17 @@ target_include_directories(
 )
 
 add_executable(ll1_program
-        src/main.cpp
+        CreateTable.h
+        PrintTable.cpp
+        PrintTable.h
+        ReadGrammar.cpp
+        ReadGrammar.h
+        Rule.cpp
+        Rule.h
+        StringHelpers.cpp
+        StringHelpers.h
+        TableRow.h
+        main.cpp
 )
 
 #add_executable(ll1_tests
