@@ -1,5 +1,5 @@
 #pragma once
-#include "Rule.h"
+#include "GrammarRules.h"
 #include "TableRow.h"
 #include "GetDirectionSymbols.h"
 

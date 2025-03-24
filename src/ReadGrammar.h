@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <map>
 
-#include "Rule.h"
+#include "GrammarRules.h"
 #include "GetDirectionSymbols.h"
 #include "StringHelpers.h"
 
