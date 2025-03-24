@@ -7,9 +7,9 @@ struct TableRow
 {
 	std::string symbol;
 	std::set<std::string> directionSymbols;
-	bool shift = false;
-	bool error = false;
+	bool shift;
+	bool error;
 	std::optional<size_t> pointer;
-	bool stack = false;
-	bool end = false;
+	bool stack;
+	bool end;
 };
