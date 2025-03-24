@@ -1,2 +1,4 @@
 .idea
 cmake-build-debug-linux
+cmake-build-debug
+src/cmake-build-debug
