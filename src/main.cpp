@@ -1,65 +1,62 @@
-﻿#include <iostream>
+﻿#include <fstream>
+#include <iostream>
 #include <optional>
 #include <vector>
-#include <fstream>
 
-#include "TableRow.h"
 #include "ReadTable.h"
 #include "SyntaxAnalyzer.h"
-
-using namespace std;
+#include "TableRow.h"
 
 struct Args
 {
-    string inputFileName, grammarFileName;
+	std::string inputFileName, grammarFileName;
 };
 
-optional<Args> ParseArgs(int argc, char* argv[]);
+std::optional<Args> ParseArgs(int argc, char* argv[]);
 
 int main(int argc, char* argv[])
 {
-    optional<Args> args = ParseArgs(argc, argv);
+	std::optional<Args> args = ParseArgs(argc, argv);
+	if (!args.has_value())
+	{
+		return EXIT_FAILURE;
+	}
 
-    if (!args.has_value())
-    {
-        return 1;
-    }
+	std::vector<TableRow> table;
+	try
+	{
+		table = ReadTable(args->grammarFileName);
+	}
+	catch (const std::runtime_error&)
+	{
+		std::cerr << "Can not read table from file: " << args->grammarFileName << std::endl;
+		return EXIT_FAILURE;
+	}
 
-    vector<TableRow> table;
+	try
+	{
+		SyntaxAnalyzer().Analyze(table, args->inputFileName);
+		std::cout << "Success" << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cout << "Error: " << e.what() << std::endl;
+	}
 
-    try
-    {
-        table = ReadTable(args->grammarFileName);
-    }
-    catch (const runtime_error&)
-    {
-        return 1;
-    }
-
-    try
-    {
-        Analyze(table, args->inputFileName);
-        cout << "OK!!!" << endl;
-    }
-    catch (const std::exception& e)
-    {
-        cout << "ERROR: " << e.what() << endl;
-    }
-
-    return 0;
+	return EXIT_SUCCESS;
 }
 
-optional<Args> ParseArgs(int argc, char* argv[])
+std::optional<Args> ParseArgs(int argc, char* argv[])
 {
-    if (argc != 3)
-    {
-        cout << "Invalid quantity of arguments" << endl;
-        return nullopt;
-    }
+	if (argc != 3)
+	{
+		std::cerr << "Invalid quantity of arguments" << std::endl;
+		return std::nullopt;
+	}
 
-    Args args;
-    args.inputFileName = argv[1];
-    args.grammarFileName = argv[2];
+	Args args;
+	args.inputFileName = argv[1];
+	args.grammarFileName = argv[2];
 
-    return args;
+	return args;
 }

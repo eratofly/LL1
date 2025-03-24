@@ -7,9 +7,11 @@
 #include "TableRow.h"
 #include "StringHelpers.h"
 
+using Table = std::vector<TableRow>;
+
 class SyntaxAnalyzer {
 public:
-    [[maybe_unused]] void Analyze(const std::vector<TableRow>& transitionTable, const std::string& fileName) {
+    [[maybe_unused]] void Analyze(const Table& transitionTable, const std::string& fileName) {
         ReadTokensFromFile(fileName);
 
         bool isAnalysisComplete = false;
@@ -18,8 +20,8 @@ public:
             const TableRow& currentRow = transitionTable[currentState];
             std::optional<std::string> currentToken = GetCurrentToken();
 
-            bool isTokenValid = currentToken.has_value() &&
-                                currentRow.directionSymbols.find(currentToken.value()) != currentRow.directionSymbols.end();
+            const bool isTokenValid = currentToken.has_value() &&
+                                currentRow.directionSymbols.contains(currentToken.value());
 
             if (isTokenValid && stateStack.empty() && currentRow.end) {
                 isAnalysisComplete = true;
@@ -43,7 +45,7 @@ public:
                 stateStack.push_back(currentState + 1);
             }
 
-            if (isTokenValid && currentRow.pointer.has_value()) {
+            if (currentRow.pointer.has_value()) {
                 currentState = currentRow.pointer.value();
             }
 
@@ -75,8 +77,7 @@ private:
             size_t startPos = 0;
             size_t endPos = line.find(' ');
             while (endPos != std::string::npos) {
-                std::string token = line.substr(startPos, endPos - startPos);
-                if (!token.empty()) {
+                if (std::string token = line.substr(startPos, endPos - startPos); !token.empty()) {
                     tokenList.push_back(token);
                 }
                 startPos = endPos + 1;

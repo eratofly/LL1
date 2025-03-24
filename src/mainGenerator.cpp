@@ -3,42 +3,41 @@
 #include <fstream>
 #include <iostream>
 
-#include "ReadGrammar.h"
 #include "CreateTable.h"
 #include "PrintTable.h"
-
-using namespace std;
+#include "ReadGrammar.h"
+#include "SyntaxAnalyzer.h"
 
 struct Args
 {
-    string inputFileName, outputFileName;
+    std::string inputFileName, outputFileName;
 };
 
-optional<Args> ParseArgs(int argc, char* argv[]);
+std::optional<Args> ParseArgs(int argc, char* argv[]);
 
 int main(int argc, char* argv[])
 {
-    optional<Args> args = ParseArgs(argc, argv);
-    if (args == nullopt)
+    std::optional<Args> args = ParseArgs(argc, argv);
+    if (args == std::nullopt)
     {
-        return 1;
+        return EXIT_FAILURE;
     }
 
-    ifstream inputFile(args->inputFileName);
+    std::ifstream inputFile(args->inputFileName);
     if (!inputFile.is_open())
     {
-        cout << "Input file is not found: " << args->inputFileName << endl;
-        return 1;
+        std::cerr << "Input file is not found: " << args->inputFileName << std::endl;
+        return EXIT_FAILURE;
     }
 
-    ofstream outputFile(args->outputFileName);
+    std::ofstream outputFile(args->outputFileName);
     if (!outputFile.is_open())
     {
-        cout << "Output file is not found: " << args->outputFileName << endl;
-        return 1;
+        std::cerr << "Output file is not found: " << args->outputFileName << std::endl;
+        return EXIT_FAILURE;
     }
 
-    vector<Rule> rules = ReadGrammar(inputFile);
+    std::vector<Rule> rules = ReadGrammar(inputFile);
 
     for (const Rule& rule : rules)
     {
@@ -58,17 +57,28 @@ int main(int argc, char* argv[])
         std::cout << std::endl;
     }
 
-    vector<TableRow> table = CreateTable(rules);
+    std::vector<TableRow> table = CreateTable(rules);
     PrintTable(table, outputFile);
-    return 0;
+
+	try
+	{
+		SyntaxAnalyzer().Analyze(table, args->inputFileName);
+		std::cout << "Success" << std::endl;
+	}
+	catch (const std::exception& e)
+	{
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+
+    return EXIT_SUCCESS;
 }
 
-optional<Args> ParseArgs(int argc, char* argv[])
+std::optional<Args> ParseArgs(int argc, char* argv[])
 {
     if (argc != 3)
     {
-        cout << "Invalid quantity of arguments" << endl;
-        return nullopt;
+        std::cerr << "Invalid quantity of arguments" << std::endl;
+        return std::nullopt;
     }
 
     Args args;
