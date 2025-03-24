@@ -1,15 +1,20 @@
-﻿#include <fstream>
+﻿#include "GrammarReader.h"
+#include "GrammarRules.h"
+#include "PrintTable.h"
+
+#include <fstream>
 #include <iostream>
 #include <optional>
 #include <vector>
 
 #include "SyntaxAnalyzer.h"
+#include "TableCreator.h"
 #include "TableReader.h"
 #include "TableRow.h"
 
 struct Args
 {
-	std::string inputFileName, grammarFileName;
+	std::string inputFileName, outputFileName;
 };
 
 std::optional<Args> ParseArgs(int argc, char* argv[]);
@@ -22,26 +27,60 @@ int main(int argc, char* argv[])
 		return EXIT_FAILURE;
 	}
 
-	std::vector<TableRow> table;
-	try
+	std::ifstream inputFile(args->inputFileName);
+	if (!inputFile.is_open())
 	{
-		table = TableReader::ReadFromFile(args->grammarFileName);
+		std::cerr << "Input file is not found: " << args->inputFileName << std::endl;
+		return EXIT_FAILURE;
 	}
-	catch (const std::runtime_error&)
+	std::ofstream outputFile(args->outputFileName);
+	if (!outputFile.is_open())
 	{
-		std::cerr << "Can not read table from file: " << args->grammarFileName << std::endl;
+		std::cerr << "Output file is not found: " << args->outputFileName << std::endl;
 		return EXIT_FAILURE;
 	}
 
+	std::vector<GrammarRules::Rule> rules = GrammarReader::ReadGrammar(inputFile);
+	for (const GrammarRules::Rule& rule : rules)
+	{
+		std::cout << rule.nonTerminal << " -> ";
+		for (const std::string& s : rule.rightPart)
+		{
+			std::cout << s << " ";
+		}
+		if (!rule.directionSymbols.empty())
+		{
+			std::cout << "/ ";
+		}
+		for (const std::string s : rule.directionSymbols)
+		{
+			std::cout << s << " ";
+		}
+		std::cout << std::endl;
+	}
+
+	std::vector<TableRow> table = TableCreator::BuildTable(rules);
+	PrintTable(table, outputFile);
+
 	try
 	{
-		SyntaxAnalyzer().Analyze(table, args->inputFileName);
-		std::cout << "Success" << std::endl;
+		table = TableReader::ReadFromFile(args->outputFileName);
 	}
-	catch (const std::exception& e)
+	catch (const std::runtime_error&)
 	{
-		std::cout << "Error: " << e.what() << std::endl;
+		std::cerr << "Can not read table from file: " << args->outputFileName << std::endl;
+		return EXIT_FAILURE;
 	}
+
+	// try
+	// {
+	// 	SyntaxAnalyzer().Analyze(table, args->inputFileName);
+	// 	std::cout << "Success" << std::endl;
+	// }
+	// catch (const std::exception& e)
+	// {
+	// 	std::cout << "Error: " << e.what() << std::endl;
+	// }
 
 	return EXIT_SUCCESS;
 }
@@ -56,7 +95,7 @@ std::optional<Args> ParseArgs(int argc, char* argv[])
 
 	Args args;
 	args.inputFileName = argv[1];
-	args.grammarFileName = argv[2];
+	args.outputFileName = argv[2];
 
 	return args;
 }

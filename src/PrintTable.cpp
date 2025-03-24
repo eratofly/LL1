@@ -1,5 +1,7 @@
 #include "PrintTable.h"
 
+static inline const auto SEPARATOR = ";";
+
 void PrintDirectionSymbols(const TableRow& tableStr, std::ostream& outputFile)
 {
 	int index = 0;
@@ -14,7 +16,7 @@ void PrintDirectionSymbols(const TableRow& tableStr, std::ostream& outputFile)
 		}
 		index++;
 	}
-	outputFile << "\t";
+	outputFile << SEPARATOR;
 }
 
 void PrintBoolValue(const bool value, std::ostream& outputFile)
@@ -27,7 +29,7 @@ void PrintBoolValue(const bool value, std::ostream& outputFile)
 	{
 		outputFile << "-";
 	}
-	outputFile << "\t";
+	outputFile << SEPARATOR;
 }
 
 void PrintPointer(const std::optional<size_t> pointer, std::ostream& outputFile)
@@ -40,19 +42,26 @@ void PrintPointer(const std::optional<size_t> pointer, std::ostream& outputFile)
 	{
 		outputFile << "NULL";
 	}
-	outputFile << "\t";
+	outputFile << SEPARATOR;
 }
 
 void PrintTable(const std::vector<TableRow>& table, std::ostream& outputFile)
 {
-	outputFile << "index\tsymbol\tdirectionSymbols\tshift\terror\tpointer\tstack\tend" << std::endl;
+	outputFile << "index" << SEPARATOR
+			   << "symbol" << SEPARATOR
+			   << "directionSymbols" << SEPARATOR
+			   << "shift" << SEPARATOR
+			   << "error" << SEPARATOR
+			   << "pointer" << SEPARATOR
+			   << "stack" << SEPARATOR
+			   << "end" << std::endl;
 
 	for (size_t i = 0; i < table.size(); i++)
 	{
 		const TableRow& tableStr = table[i];
 		std::string symbol = tableStr.symbol == ";" ? "\";\"" : tableStr.symbol;
-		outputFile << i + 1 << "\t"
-				   << symbol << "\t";
+		outputFile << i + 1 << SEPARATOR
+				   << symbol << SEPARATOR;
 		PrintDirectionSymbols(tableStr, outputFile);
 		PrintBoolValue(tableStr.shift, outputFile);
 		PrintBoolValue(tableStr.error, outputFile);
