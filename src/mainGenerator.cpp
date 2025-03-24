@@ -3,7 +3,8 @@
 #include <fstream>
 #include <iostream>
 
-#include "CreateTable.h"
+#include "GrammarReader.h"
+#include "TableCreator.h"
 #include "PrintTable.h"
 #include "ReadGrammar.h"
 #include "SyntaxAnalyzer.h"

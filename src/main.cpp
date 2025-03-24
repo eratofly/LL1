@@ -3,8 +3,8 @@
 #include <optional>
 #include <vector>
 
-#include "ReadTable.h"
 #include "SyntaxAnalyzer.h"
+#include "TableReader.h"
 #include "TableRow.h"
 
 struct Args
@@ -25,7 +25,7 @@ int main(int argc, char* argv[])
 	std::vector<TableRow> table;
 	try
 	{
-		table = ReadTable(args->grammarFileName);
+		table = TableReader::ReadFromFile(args->grammarFileName);
 	}
 	catch (const std::runtime_error&)
 	{

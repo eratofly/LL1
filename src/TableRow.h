@@ -1,7 +1,7 @@
 #pragma once
-#include <string>
-#include <set>
 #include <optional>
+#include <set>
+#include <string>
 
 struct TableRow
 {

@@ -9,29 +9,17 @@ target_include_directories(
         catch2 INTERFACE lib/catch2
 )
 
-add_executable(ll1_program_1
-        CreateTable.h
+add_executable(ll1_program
+        TableCreator.h
         PrintTable.cpp
         PrintTable.h
-        ReadGrammar.cpp
-        ReadGrammar.h
+        GrammarReader.h
         GrammarRules.h
-        StringHelpers.cpp
-        StringHelpers.h
         TableRow.h
         main.cpp
 )
 
-add_executable(ll1_program_2
-        mainGenerator.cpp
-        CreateTable.h
-        PrintTable.cpp
-        PrintTable.h
-        ReadGrammar.cpp
-        ReadGrammar.h
-        StringHelpers.cpp
-        StringHelpers.h
-        GrammarRules.h
-        TableRow.h
-        SyntaxAnalyzer.h
-)
+#add_executable(ll1_tests
+#)
+
+#target_link_libraries(ll1_tests PUBLIC catch2)
