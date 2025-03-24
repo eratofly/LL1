@@ -29,10 +29,9 @@ add_executable(ll1_program_2
         PrintTable.h
         ReadGrammar.cpp
         ReadGrammar.h
-        Rule.cpp
-        Rule.h
         StringHelpers.cpp
         StringHelpers.h
+        GrammarRules.h
         TableRow.h
         SyntaxAnalyzer.h
 )
