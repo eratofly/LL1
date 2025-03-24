@@ -7,7 +7,7 @@
 
 class SyntaxAnalyzer {
 public:
-    [[maybe_unused]] void Analyze(const std::vector<TableRow>& transitionTable, const std::string& fileName) {
+    void Analyze(const std::vector<TableRow>& transitionTable, const std::string& fileName) {
         ReadTokensFromFile(fileName);
 
         bool isAnalysisComplete = false;

@@ -4,7 +4,7 @@
 #include <fstream>
 
 #include "TableRow.h"
-#include "ReadTable.h"
+#include "TableReader.h"
 #include "SyntaxAnalyzer.h"
 
 using namespace std;

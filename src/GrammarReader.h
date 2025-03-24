@@ -1,5 +1,5 @@
-#ifndef GRAMMAR_PROCESSOR_H
-#define GRAMMAR_PROCESSOR_H
+#ifndef GRAMMAR_READER_H
+#define GRAMMAR_READER_H
 
 #include <vector>
 #include <string>
@@ -11,7 +11,7 @@
 #include <sstream>
 #include "GrammarRules.h"
 #include "DirectionSymbolsProcessor.h"
-#include "StringHelpers.h"
+#include "StringHandler.h"
 
 class GrammarReader {
 public:
@@ -19,8 +19,8 @@ public:
         std::vector<GrammarRules::Rule> rules;
         std::string ruleStr;
         while (getline(inputFile, ruleStr)) {
-            std::vector<std::string> ruleParts = Split(ruleStr, "->");
-            std::string nonTerminal = RemoveSpacesInBeginAndEndOfWord(ruleParts[0]);
+            std::vector<std::string> ruleParts = StringHandler::Split(ruleStr, "->");
+            std::string nonTerminal = StringHandler::RemoveSpacesInBeginAndEndOfWord(ruleParts[0]);
             ReadRightPart(ruleParts[1], nonTerminal, rules);
         }
         RemoveLeftRecursion(rules);
@@ -41,14 +41,14 @@ private:
     }
 
     static void ReadRightPart(const std::string& rightPartStr, const std::string& nonTerminal, std::vector<GrammarRules::Rule>& rules) {
-        std::vector<std::string> rightParts = Split(rightPartStr, "|");
+        std::vector<std::string> rightParts = StringHandler::Split(rightPartStr, "|");
         for (std::string& part : rightParts) {
-            part = RemoveSpacesInBeginAndEndOfWord(part);
+            part = StringHandler::RemoveSpacesInBeginAndEndOfWord(part);
         }
         for (const std::string& part : rightParts) {
             GrammarRules::Rule rule;
             rule.nonTerminal = nonTerminal;
-            rule.rightPart = Split(part, " ");
+            rule.rightPart = StringHandler::Split(part, " ");
             if (rules.empty()) {
                 rule.hasEnd = true;
             }
@@ -220,4 +220,4 @@ private:
     }
 };
 
-#endif // GRAMMAR_PROCESSOR_H
+#endif // GRAMMAR_READER_H
