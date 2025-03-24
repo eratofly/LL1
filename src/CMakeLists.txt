@@ -11,14 +11,11 @@ target_include_directories(
 )
 
 add_executable(ll1_program
-        CreateTable.h
+        TableCreator.h
         PrintTable.cpp
         PrintTable.h
-        ReadGrammar.cpp
-        ReadGrammar.h
+        GrammarReader.h
         GrammarRules.h
-        StringHelpers.cpp
-        StringHelpers.h
         TableRow.h
         main.cpp
 )

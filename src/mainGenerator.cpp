@@ -3,8 +3,8 @@
 #include <fstream>
 #include <iostream>
 
-#include "ReadGrammar.h"
-#include "CreateTable.h"
+#include "GrammarReader.h"
+#include "TableCreator.h"
 #include "PrintTable.h"
 
 using namespace std;
