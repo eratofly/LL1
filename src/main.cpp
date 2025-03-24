@@ -5,7 +5,7 @@
 
 #include "TableRow.h"
 #include "ReadTable.h"
-#include "Analizator.h"
+#include "SyntaxAnalyzer.h"
 
 using namespace std;
 
