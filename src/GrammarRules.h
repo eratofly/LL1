@@ -8,8 +8,8 @@
 class GrammarRules
 {
 public:
-	constexpr static const std::string EMPTY_SYMBOL = "e";
-	constexpr static const std::string END_SYMBOL = "#";
+	constexpr static std::string EMPTY_SYMBOL = "e";
+	constexpr static std::string END_SYMBOL = "#";
 
 	struct Rule
 	{

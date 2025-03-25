@@ -3,6 +3,10 @@
 #include <format>
 #include <fstream>
 #include <iostream>
+#include <iterator>
+#include <sstream>
+#include <stack>
+#include <unordered_map>
 #include <vector>
 
 using Table = std::vector<TableRow>;
@@ -68,10 +72,88 @@ public:
 		}
 	}
 
+	std::string GetPathway() const
+	{
+		const char* delim = " -> ";
+
+		std::ostringstream imploded;
+		std::copy(pathway.begin(), pathway.end(),
+			std::ostream_iterator<size_t>(imploded, delim));
+
+		return "";
+	}
+
+	bool Run(std::vector<TableRow> const& transitionTable, std::string const& input)
+	{
+		stream = std::stringstream(input);
+		inputStr = input;
+		pathway.clear();
+		Shift();
+		while (index < transitionTable.size())
+		{
+			std::cout << index << std::endl;
+			pathway.push_back(index);
+			auto& [symbol, guidedSet, shift, error, pointer, isStack, end] = transitionTable[index];
+			if (!guidedSet.contains(currNonTerminal))
+			{
+				if (error)
+				{
+					return false;
+				}
+				++index;
+				continue;
+			}
+
+			if (end)
+			{
+				return stack.empty();
+			}
+
+			if (shift)
+			{
+				Shift();
+			}
+			if (isStack)
+			{
+				stack.push(isStack);
+			}
+
+			if (pointer.has_value())
+			{
+				index = pointer.value();
+			}
+			else if (!stack.empty())
+			{
+				index = stack.top();
+				stack.pop();
+			}
+			else
+			{
+				return false;
+			}
+		}
+		return false;
+	}
+
 private:
+	std::stringstream stream;
+	std::string inputStr;
+	std::vector<size_t> pathway;
+	size_t pos;
+	std::string currNonTerminal;
+	size_t index = 0;
+	TableRow currRow;
+	std::unordered_map<int, TableRow> rows;
+	std::stack<int> stack;
+
 	std::vector<std::string> tokenList;
 	size_t currentState = 0;
 	std::vector<size_t> stateStack;
+
+	void Shift()
+	{
+		stream >> currNonTerminal;
+	}
 
 	void ReadTokensFromFile(const std::string& fileName)
 	{

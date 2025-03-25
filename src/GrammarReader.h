@@ -189,7 +189,7 @@ private:
 				newRules.push_back(entry.second[0]);
 				continue;
 			}
-			std::vector<std::string> prefix = { entry.first };
+			std::vector prefix = { entry.first };
 			auto prefixAndRules = DefineSamePrefixAndRules(1, prefix, entry.second);
 			std::string newNonterminal = GetUniqueNonterminalName(rules, nonTerminal);
 			GrammarRules::Rule newRule;

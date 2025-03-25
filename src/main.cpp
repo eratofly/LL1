@@ -14,7 +14,7 @@
 
 struct Args
 {
-	std::string inputFileName, outputFileName;
+	std::string grammarFileName, outputFileName;
 };
 
 std::optional<Args> ParseArgs(int argc, char* argv[]);
@@ -27,10 +27,10 @@ int main(int argc, char* argv[])
 		return EXIT_FAILURE;
 	}
 
-	std::ifstream inputFile(args->inputFileName);
+	std::ifstream inputFile(args->grammarFileName);
 	if (!inputFile.is_open())
 	{
-		std::cerr << "Input file is not found: " << args->inputFileName << std::endl;
+		std::cerr << "Input file is not found: " << args->grammarFileName << std::endl;
 		return EXIT_FAILURE;
 	}
 	std::ofstream outputFile(args->outputFileName);
@@ -64,23 +64,13 @@ int main(int argc, char* argv[])
 
 	try
 	{
-		table = TableReader::ReadFromFile(args->outputFileName);
+		TableReader::ReadFromFile(args->outputFileName);
 	}
 	catch (const std::runtime_error&)
 	{
 		std::cerr << "Can not read table from file: " << args->outputFileName << std::endl;
 		return EXIT_FAILURE;
 	}
-
-	// try
-	// {
-	// 	SyntaxAnalyzer().Analyze(table, args->inputFileName);
-	// 	std::cout << "Success" << std::endl;
-	// }
-	// catch (const std::exception& e)
-	// {
-	// 	std::cout << "Error: " << e.what() << std::endl;
-	// }
 
 	return EXIT_SUCCESS;
 }
@@ -94,7 +84,7 @@ std::optional<Args> ParseArgs(int argc, char* argv[])
 	}
 
 	Args args;
-	args.inputFileName = argv[1];
+	args.grammarFileName = argv[1];
 	args.outputFileName = argv[2];
 
 	return args;
