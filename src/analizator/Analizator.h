@@ -1,0 +1,12 @@
+#pragma once
+#include <vector>
+#include <fstream>
+#include <iostream>
+#include <format>
+#include <algorithm>
+#include <stdexcept>
+
+#include "TableRow.h"
+#include "StringHelpers.h"
+
+void Analyze(const std::vector<TableRow> table, const std::string& inputFileName);
