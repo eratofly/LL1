@@ -9,4 +9,5 @@
 #include "TableRow.h"
 #include "StringHelpers.h"
 
+// Runner for LL-1
 void Analyze(const std::vector<TableRow> table, const std::string& inputFileName);

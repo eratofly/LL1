@@ -16,3 +16,5 @@ void AddOtherTableStrFromRightPart(const std::vector<Rule>& rules, std::vector<T
 bool IsStack(const Rule& rule, const size_t index);
 
 std::vector<TableRow> CreateTable(const std::vector<Rule>& rules);
+
+bool IsEndOfRule(const Rule& rule, const size_t index);

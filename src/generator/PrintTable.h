@@ -4,6 +4,10 @@
 
 #include "TableRow.h"
 
+static const auto COLUMNS = "index\tsymbol\tdirectionSymbols\tshift\terror\tpointer\tstack\tend";
+static const auto COLUMN_SEEPARATOR = "\t";
+static const auto NULL_POINTER_VALUE = "NULL";
+
 void PrintDirectionSymbols(const TableRow& tableStr, std::ostream& outputFile);
 
 void PrintBoolValue(const bool value, std::ostream& outputFile);

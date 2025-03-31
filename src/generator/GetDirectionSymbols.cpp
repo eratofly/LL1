@@ -1,5 +1,6 @@
 #include "GetDirectionSymbols.h"
 
+// Возвращает множество направляющих символов для заданного нетерминала, собирая их из всех правил, где он встречается
 std::set<std::string> DefineNonTerminalDirectionSymbols(const std::string& nonTerminalName, const std::vector<Rule>& rules)
 {
     std::set<std::string> directionSymbols;
@@ -14,6 +15,7 @@ std::set<std::string> DefineNonTerminalDirectionSymbols(const std::string& nonTe
     return directionSymbols;
 }
 
+// Возвращает терминалы, которые могут следовать непосредственно после заданного нетерминала в правилах
 std::set<std::string> GetTerminalsAfterNonterminal(const Rule& rule, const std::vector<Rule>& rules)
 {
     std::vector<Rule> neededRules = GetRulesWithNonterminal(rules, rule.nonTerminal);
@@ -39,6 +41,7 @@ std::set<std::string> GetTerminalsAfterNonterminal(const Rule& rule, const std::
     return directionSymbols;
 }
 
+// Возвращает направляющие символы, которые могут следовать после указанного нетерминала в конкретном правиле
 std::set<std::string> GetDirectionSymbolsAfterNonTerminal(const Rule& rule, const std::string& nonTerminalName, const std::vector<Rule>& rules)
 {
     std::set<std::string> directionSymbols;
@@ -66,7 +69,7 @@ std::set<std::string> GetDirectionSymbolsAfterNonTerminal(const Rule& rule, cons
     return directionSymbols;
 }
 
-//���������� � ������, ���� ���������� ���������� ������ ������ � ����� ������ ����������� ������������ �������
+// Возвращает все направляющие символы, которые могут следовать после указанного нетерминала во всех правилах
 std::set<std::string> DefineDirectionSymbolsAfterNonTerminal(const std::string& nonTerminalName, const std::vector<Rule>& rules)
 {
     std::set<std::string> directionSymbols;
@@ -79,6 +82,7 @@ std::set<std::string> DefineDirectionSymbolsAfterNonTerminal(const std::string& 
     return directionSymbols;
 }
 
+// Возвращает направляющие символы для случая, когда нетерминал находится в конце правила
 std::set<std::string> GetDirectionSymbolsIfNonterminalInEnd(const Rule& rule, const std::vector<Rule>& rules)
 {
     std::set<std::string> directionSymbols;
@@ -98,6 +102,7 @@ std::set<std::string> GetDirectionSymbolsIfNonterminalInEnd(const Rule& rule, co
     return directionSymbols;
 }
 
+// Рекурсивно вычисляет направляющие символы по всем правилам
 void DefineDirectionSymbols(std::vector<Rule>& rules)
 {
     bool hasChanges = false;
@@ -106,7 +111,7 @@ void DefineDirectionSymbols(std::vector<Rule>& rules)
         Rule& rule = rules[i];
         if (rule.rightPart.size() == 0)
         {
-            throw std::logic_error("right part is empty");
+            throw std::logic_error("Right part is empty");
         }
         if (rule.rightPart.size() == 1 && rule.rightPart[0] == EMPTY_SYMBOL)
         {

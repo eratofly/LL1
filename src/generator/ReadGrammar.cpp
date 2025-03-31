@@ -13,13 +13,13 @@ std::string GetNameOfNonterminalWithIndex(const std::vector<Rule>& rules, const 
 
 void ReadRightPart(const std::string& rightPartStr, const std::string& nonTerminal, std::vector<Rule>& rules)
 {
-    std::vector<std::string> rightPart = Split(rightPartStr, "|");
+    std::vector<std::string> rightPart = Split(rightPartStr, RIGHT_PART_RULES_SEPARATOR);
     std::transform(rightPart.begin(), rightPart.end(), rightPart.begin(), RemoveSpacesInBeginAndEndOfWord);
     for (const std::string ruleStr : rightPart)
     {
         Rule rule;
         rule.nonTerminal = nonTerminal;
-        std::vector<std::string> partOfRule = Split(ruleStr, " ");
+        std::vector<std::string> partOfRule = Split(ruleStr, PART_OF_RULE_SEPARATOR);
         rule.rightPart = partOfRule;
         if (rules.empty())
         {

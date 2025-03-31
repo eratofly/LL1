@@ -9,6 +9,9 @@
 #include "GetDirectionSymbols.h"
 #include "StringHelpers.h"
 
+static const auto RIGHT_PART_RULES_SEPARATOR = "|";
+static const auto PART_OF_RULE_SEPARATOR = " ";
+
 std::string GetNameOfNonterminalWithIndex(const std::vector<Rule>& rules, const std::string& nonTerminalName);
 
 void ReadRightPart(const std::string& rightPartStr, const std::string& nonTerminal, std::vector<Rule>& rules);

@@ -7,54 +7,52 @@
 #include "ReadTable.h"
 #include "Analizator.h"
 
-using namespace std;
-
 struct Args
 {
-    string inputFileName, grammarFileName;
+    std::string inputFileName, grammarFileName;
 };
 
-optional<Args> ParseArgs(int argc, char* argv[]);
+std::optional<Args> ParseArgs(int argc, char* argv[]);
 
 int main(int argc, char* argv[])
 {
-    optional<Args> args = ParseArgs(argc, argv);
+    auto args = ParseArgs(argc, argv);
 
     if (!args.has_value())
     {
-        return 1;
+        return EXIT_FAILURE;
     }
 
-    vector<TableRow> table;
+    std::vector<TableRow> table;
 
     try
     {
         table = ReadTable(args->grammarFileName);
     }
-    catch (const runtime_error&)
+    catch (const std::runtime_error&)
     {
-        return 1;
+        return EXIT_FAILURE;
     }
 
     try
     {
         Analyze(table, args->inputFileName);
-        cout << "OK!!!" << endl;
+        std::cout << "OK!!!" << std::endl;
     }
     catch (const std::exception& e)
     {
-        cout << "ERROR: " << e.what() << endl;
+        std::cout << "ERROR: " << e.what() << std::endl;
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }
 
-optional<Args> ParseArgs(int argc, char* argv[])
+std::optional<Args> ParseArgs(int argc, char* argv[])
 {
     if (argc != 3)
     {
-        cout << "Invalid quantity of arguments" << endl;
-        return nullopt;
+        std::cout << "Invalid quantity of arguments" << std::endl;
+        return std::nullopt;
     }
 
     Args args;

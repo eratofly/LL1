@@ -46,13 +46,13 @@ TableRow ReadTableRow(const std::string& tableRowStr)
 
 std::set<std::string> ReadDirectionSymbols(const std::string& directionSymbolsStr)
 {
-    std::vector<std::string> dirtectionSymbols = Split(directionSymbolsStr, " \| ");
+    std::vector<std::string> dirtectionSymbols = Split(directionSymbolsStr, DIRECTED_SYMBOLS_SEPARATOR);
     return std::set<std::string>(dirtectionSymbols.begin(), dirtectionSymbols.end());
 }
 
 std::optional<size_t> ReadPointer(const std::string& pointerStr)
 {
-    if (pointerStr == "NULL")
+    if (pointerStr == NULL_POINTER_STRING)
     {
         return std::nullopt;
     }
