@@ -9,15 +9,12 @@ std::vector<TableRow> ReadTable(const std::string& grammarFileName)
         throw std::runtime_error("Grammar file is not found");
     }
 
-    std::vector<TableRow> table;
-
+    Table table;
+    std::string str;
+    getline(grammarFile, str);
+    while (getline(grammarFile, str))
     {
-        std::string str;
-        getline(grammarFile, str);
-        while (getline(grammarFile, str))
-        {
-            table.push_back(ReadTableRow(str));
-        }
+        table.push_back(ReadTableRow(str));
     }
 
     return table;

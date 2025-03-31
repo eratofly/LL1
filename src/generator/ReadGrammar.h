@@ -1,8 +1,5 @@
 #pragma once
-#include <vector>
-#include <string>
 #include <istream>
-#include <algorithm>
 #include <map>
 
 #include "Rule.h"

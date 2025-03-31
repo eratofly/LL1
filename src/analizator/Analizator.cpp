@@ -43,7 +43,7 @@ void PopToken()
 	}
 }
 
-void Analyze(const std::vector<TableRow> table, const std::string& inputFileName)
+void Analyze(const Table table, const std::string& inputFileName)
 {
 	GenerateTokensFromFile(inputFileName);
 

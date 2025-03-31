@@ -43,7 +43,7 @@ void PrintPointer(const std::optional<size_t> pointer, std::ostream& outputFile)
     outputFile << COLUMN_SEEPARATOR;
 }
 
-void PrintTable(const std::vector<TableRow>& table, std::ostream& outputFile)
+void PrintTable(const Table& table, std::ostream& outputFile)
 {
     outputFile << COLUMNS << std::endl;
 

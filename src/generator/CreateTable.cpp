@@ -28,7 +28,7 @@ int GetCountOfIdenticalNonterminals(const std::vector<Rule>& rules, const std::s
 	return countOfNonterminals;
 }
 
-void AddNonterminals(const std::vector<Rule>& rules, std::vector<TableRow>& table)
+void AddNonterminals(const std::vector<Rule>& rules, Table& table)
 {
 	for (const Rule& rule : rules)
 	{
@@ -50,7 +50,7 @@ std::set<std::string> GetTerminalDirectionSymbols(const std::vector<Rule>& rules
 	return { terminalName };
 }
 
-void AddOtherTableStrFromRightPart(const std::vector<Rule>& rules, std::vector<TableRow>& table, const Rule& rule)
+void AddOtherTableRowFromRightPart(const std::vector<Rule>& rules, Table& table, const Rule& rule)
 {
 	for (size_t i = 0; i < rule.rightPart.size(); i++)
 	{
@@ -91,16 +91,16 @@ void AddOtherTableStrFromRightPart(const std::vector<Rule>& rules, std::vector<T
 	}
 }
 
-std::vector<TableRow> CreateTable(const std::vector<Rule>& rules)
+Table CreateTable(const std::vector<Rule>& rules)
 {
-	std::vector<TableRow> table;
+	Table table;
 
 	AddNonterminals(rules, table);
 	for (size_t i = 0; i < rules.size(); i++)
 	{
 		table[i].pointer = table.size();
 		table[i].error = !HasNonTerminal(i + 1, rules, rules[i].nonTerminal);
-		AddOtherTableStrFromRightPart(rules, table, rules[i]);
+		AddOtherTableRowFromRightPart(rules, table, rules[i]);
 	}
 
 	return table;

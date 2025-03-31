@@ -2,6 +2,7 @@
 #include <string>
 #include <set>
 #include <optional>
+#include <vector>
 
 struct TableRow
 {
@@ -13,3 +14,5 @@ struct TableRow
 	bool stack = false;
 	bool end = false;
 };
+
+using Table = std::vector<TableRow>;
