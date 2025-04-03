@@ -1,0 +1,165 @@
+index	symbol	directionSymbols	shift	error	pointer	stack	end
+1	S	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	-	66	-	-	
+2	S	id | id.<comid>	-	-	68	-	-	
+3	S	if	-	+	72	-	-	
+4	A	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | if | not | true	-	-	77	-	-	
+5	A	else	-	+	78	-	-	
+6	Exp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	80	-	-	
+7	Exp1	!= | < | <= | = | > | >=	-	-	82	-	-	
+8	Exp1	# | ( | ) | + | , | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | ] | else | false | id | id.<comid> | if | not | true	-	+	85	-	-	
+9	simexp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	86	-	-	
+10	simexp1	+ | - | OR	-	-	88	-	-	
+11	simexp1	!= | # | ( | ) | + | , | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | <string> | = | > | >= | ] | else | false | id | id.<comid> | if | not | true	-	+	91	-	-	
+12	simterm	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	92	-	-	
+13	simterm1	* | / | AND | div | mod	-	-	94	-	-	
+14	simterm1	!= | # | ( | ) | + | , | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | <string> | = | > | >= | OR | ] | else | false | id | id.<comid> | if | not | true	-	+	97	-	-	
+15	term	+	-	-	98	-	-	
+16	term	-	-	-	100	-	-	
+17	term	(	-	-	102	-	-	
+18	term	not	-	-	105	-	-	
+19	term	id | id.<comid>	-	-	107	-	-	
+20	term	0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9	-	-	108	-	-	
+21	term	true	-	-	109	-	-	
+22	term	false	-	-	110	-	-	
+23	term	<string>	-	+	111	-	-	
+24	ident	id	-	-	112	-	-	
+25	ident	id | id.<comid>	-	-	113	-	-	
+26	ident	id | id.<comid>	-	-	114	-	-	
+27	ident	id | id.<comid>	-	+	115	-	-	
+28	comid	id	-	-	116	-	-	
+29	comid	id.<comid>	-	+	117	-	-	
+30	idindx	id | id.<comid>	-	+	118	-	-	
+31	listInd	[	-	+	120	-	-	
+32	listInd1	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | <string> | = | > | >= | AND | OR | ] | div | else | false | id | id.<comid> | if | mod | not | true	-	-	124	-	-	
+33	listInd1	[	-	+	125	-	-	
+34	callFunc	id | id.<comid>	-	+	126	-	-	
+35	listExp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	130	-	-	
+36	listExp1	)	-	-	132	-	-	
+37	listExp1	,	-	+	133	-	-	
+38	Rel	=	-	-	135	-	-	
+39	Rel	!=	-	-	136	-	-	
+40	Rel	>	-	-	137	-	-	
+41	Rel	<	-	-	138	-	-	
+42	Rel	<=	-	-	139	-	-	
+43	Rel	>=	-	+	140	-	-	
+44	PLUSO	+	-	-	141	-	-	
+45	PLUSO	-	-	-	142	-	-	
+46	PLUSO	OR	-	+	143	-	-	
+47	MULO	AND	-	-	144	-	-	
+48	MULO	*	-	-	145	-	-	
+49	MULO	/	-	-	146	-	-	
+50	MULO	mod	-	-	147	-	-	
+51	MULO	div	-	+	148	-	-	
+52	Number	0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9	-	+	149	-	-	
+53	Number1	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | <string> | = | > | >= | AND | OR | ] | div | else | false | id | id.<comid> | if | mod | not | true	-	-	151	-	-	
+54	Number1	0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9	-	+	152	-	-	
+55	Digit	0	-	-	153	-	-	
+56	Digit	1	-	-	154	-	-	
+57	Digit	2	-	-	155	-	-	
+58	Digit	4	-	-	156	-	-	
+59	Digit	5	-	-	157	-	-	
+60	Digit	6	-	-	158	-	-	
+61	Digit	7	-	-	159	-	-	
+62	Digit	8	-	-	160	-	-	
+63	Digit	9	-	-	161	-	-	
+64	Digit	3	-	+	162	-	-	
+65	Digit1	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | <string> | = | > | >= | AND | OR | ] | div | else | false | id | id.<comid> | if | mod | not | true	-	+	164	-	-	
+66	Exp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	6	+	-	
+67	#	#	-	+	NULL	-	+	
+68	idindx	id | id.<comid>	-	+	30	+	-	
+69	=	=	+	+	70	-	-	
+70	Exp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	6	+	-	
+71	#	#	-	+	NULL	-	+	
+72	if	if	+	+	73	-	-	
+73	Exp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	6	+	-	
+74	A	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | else | false | id | id.<comid> | if | not | true	-	+	4	+	-	
+75	fi	fi	+	+	76	-	-	
+76	#	#	-	+	NULL	-	+	
+77	S	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | if | not | true	-	+	1	-	-	
+78	else	else	+	+	79	-	-	
+79	S	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | if | not | true	-	+	1	-	-	
+80	simexp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	9	+	-	
+81	Exp1	!= | # | ( | ) | + | , | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | <string> | = | > | >= | ] | else | false | id | id.<comid> | if | not | true	-	+	7	-	-	
+82	Rel	!= | < | <= | = | > | >=	-	+	38	+	-	
+83	simexp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	9	+	-	
+84	Exp1	!= | # | ( | ) | + | , | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | <string> | = | > | >= | ] | else | false | id | id.<comid> | if | not | true	-	+	7	-	-	
+85	e	# | ( | ) | + | , | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | ] | else | false | id | id.<comid> | if | not | true	-	+	NULL	-	-	
+86	simterm	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	12	+	-	
+87	simexp1	!= | # | ( | ) | + | , | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | <string> | = | > | >= | OR | ] | else | false | id | id.<comid> | if | not | true	-	+	10	-	-	
+88	PLUSO	+ | - | OR	-	+	44	+	-	
+89	simterm	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	12	+	-	
+90	simexp1	!= | # | ( | ) | + | , | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | <string> | = | > | >= | OR | ] | else | false | id | id.<comid> | if | not | true	-	+	10	-	-	
+91	e	!= | # | ( | ) | + | , | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | <string> | = | > | >= | ] | else | false | id | id.<comid> | if | not | true	-	+	NULL	-	-	
+92	term	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	15	+	-	
+93	simterm1	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | <string> | = | > | >= | AND | OR | ] | div | else | false | id | id.<comid> | if | mod | not | true	-	+	13	-	-	
+94	MULO	* | / | AND | div | mod	-	+	47	+	-	
+95	term	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	15	+	-	
+96	simterm1	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | <string> | = | > | >= | AND | OR | ] | div | else | false | id | id.<comid> | if | mod | not | true	-	+	13	-	-	
+97	e	!= | # | ( | ) | + | , | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | <string> | = | > | >= | OR | ] | else | false | id | id.<comid> | if | not | true	-	+	NULL	-	-	
+98	+	+	+	+	99	-	-	
+99	term	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	15	-	-	
+100	-	-	+	+	101	-	-	
+101	term	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	15	-	-	
+102	(	(	+	+	103	-	-	
+103	Exp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	6	+	-	
+104	)	)	+	+	NULL	-	-	
+105	not	not	+	+	106	-	-	
+106	term	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	15	-	-	
+107	ident	id | id.<comid>	-	+	24	-	-	
+108	Number	0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9	-	+	52	-	-	
+109	true	true	+	+	NULL	-	-	
+110	false	false	+	+	NULL	-	-	
+111	string	<string>	+	+	NULL	-	-	
+112	id	id	+	+	NULL	-	-	
+113	comid	id | id.<comid>	-	+	28	-	-	
+114	idindx	id | id.<comid>	-	+	30	-	-	
+115	callFunc	id | id.<comid>	-	+	34	-	-	
+116	id	id	+	+	NULL	-	-	
+117	id.comid	id.<comid>	+	+	NULL	-	-	
+118	comid	id | id.<comid>	-	+	28	+	-	
+119	listInd	[	-	+	31	-	-	
+120	[	[	+	+	121	-	-	
+121	Exp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	6	+	-	
+122	]	]	+	+	123	-	-	
+123	listInd1	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | <string> | = | > | >= | AND | OR | [ | ] | div | else | false | id | id.<comid> | if | mod | not | true	-	+	32	-	-	
+124	e	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | <string> | = | > | >= | AND | OR | ] | div | else | false | id | id.<comid> | if | mod | not | true	-	+	NULL	-	-	
+125	listInd	[	-	+	31	-	-	
+126	comid	id | id.<comid>	-	+	28	+	-	
+127	(	(	+	+	128	-	-	
+128	listExp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	35	+	-	
+129	)	)	+	+	NULL	-	-	
+130	Exp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	6	+	-	
+131	listExp1	) | ,	-	+	36	-	-	
+132	e	)	-	+	NULL	-	-	
+133	,	,	+	+	134	-	-	
+134	listExp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | <string> | false | id | id.<comid> | not | true	-	+	35	-	-	
+135	=	=	+	+	NULL	-	-	
+136	!=	!=	+	+	NULL	-	-	
+137	>	>	+	+	NULL	-	-	
+138	<	<	+	+	NULL	-	-	
+139	=	<=	+	+	NULL	-	-	
+140	=	>=	+	+	NULL	-	-	
+141	+	+	+	+	NULL	-	-	
+142	-	-	+	+	NULL	-	-	
+143	OR	OR	+	+	NULL	-	-	
+144	AND	AND	+	+	NULL	-	-	
+145	*	*	+	+	NULL	-	-	
+146	/	/	+	+	NULL	-	-	
+147	mod	mod	+	+	NULL	-	-	
+148	div	div	+	+	NULL	-	-	
+149	Digit	0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9	-	+	55	+	-	
+150	Number1	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | <string> | = | > | >= | AND | OR | ] | div | else | false | id | id.<comid> | if | mod | not | true	-	+	53	-	-	
+151	e	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | <string> | = | > | >= | AND | OR | ] | div | else | false | id | id.<comid> | if | mod | not | true	-	+	NULL	-	-	
+152	Number	0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9	-	+	52	-	-	
+153	0	0	+	+	NULL	-	-	
+154	1	1	+	+	NULL	-	-	
+155	2	2	+	+	NULL	-	-	
+156	4	4	+	+	NULL	-	-	
+157	5	5	+	+	NULL	-	-	
+158	6	6	+	+	NULL	-	-	
+159	7	7	+	+	NULL	-	-	
+160	8	8	+	+	NULL	-	-	
+161	9	9	+	+	NULL	-	-	
+162	3	3	+	+	163	-	-	
+163	Digit1	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | <string> | = | > | >= | AND | OR | ] | div | else | false | id | id.<comid> | if | mod | not | true	-	+	65	-	-	
+164	e	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | <string> | = | > | >= | AND | OR | ] | div | else | false | id | id.<comid> | if | mod | not | true	-	+	NULL	-	-	

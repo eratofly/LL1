@@ -1,0 +1,17 @@
+<S> -> <Exp>#
+<Exp> -> <Exp><Rel><simexp> | <simexp>
+<simexp> -> <simexp><PLUSO><simterm> | <simterm>
+<simterm> -> <simterm><MULO><term> | <term>
+<term> -> +<term> | -<term> | (<Exp>) | not<term> | <ident> | <Number> | true | false
+<ident> -> id | <comid> | <idindx> | <callFunc>
+<comid> -> id | id.<comid>
+<idindx> -> <comid> <listInd>
+<listInd> -> [<Exp>] | [<Exp>] <listInd>
+<callFunc> -> <comid>(<listExp>)
+<listExp> -> <Exp> | <Exp>,<listExp>
+<Rel> -> = | != | > | < | <= | >=
+<PLUSO> -> + | - | OR
+<MULO> -> AND | * | / | mod | div
+<Number> -> <Digit> | <Digit> <Number>
+<Digit> -> 1 | 2 | 3 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0
+<char> -> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p| q | r | s | t | u | v | w | x | y | z | A | B | C | D | E | F | G| H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z

@@ -1,0 +1,168 @@
+index	symbol	directionSymbols	shift	error	pointer	stack	end
+1	S	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	-	67	-	-	
+2	S	if	-	+	69	-	-	
+3	ass	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	71	-	-	
+4	if	if	-	+	74	-	-	
+5	A	fi	-	-	78	-	-	
+6	A	else	-	+	79	-	-	
+7	Exp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	81	-	-	
+8	Exp1	!= | < | <= | = | > | >=	-	-	83	-	-	
+9	Exp1	# | ) | , | = | ] | else | fi	-	+	86	-	-	
+10	simexp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	87	-	-	
+11	simexp1	+ | - | OR	-	-	89	-	-	
+12	simexp1	!= | # | ) | , | < | <= | = | > | >= | ] | else | fi	-	+	92	-	-	
+13	simterm	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	93	-	-	
+14	simterm1	* | / | AND | div | mod	-	-	95	-	-	
+15	simterm1	!= | # | ) | + | , | - | < | <= | = | > | >= | OR | ] | else | fi	-	+	98	-	-	
+16	term	+	-	-	99	-	-	
+17	term	-	-	-	101	-	-	
+18	term	(	-	-	103	-	-	
+19	term	not	-	-	106	-	-	
+20	term	id	-	-	108	-	-	
+21	term	0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9	-	-	109	-	-	
+22	term	true	-	-	110	-	-	
+23	term	false	-	+	111	-	-	
+24	ident	id	-	-	112	-	-	
+25	ident	id	-	-	113	-	-	
+26	ident	id	-	-	114	-	-	
+27	ident	id	-	+	115	-	-	
+28	comid	id	-	+	116	-	-	
+29	comid1	!= | # | ( | ) | * | + | , | - | / | < | <= | = | > | >= | AND | OR | [ | ] | div | else | fi | mod	-	-	118	-	-	
+30	comid1	.	-	+	119	-	-	
+31	idindx	id	-	+	121	-	-	
+32	listInd	[	-	+	123	-	-	
+33	listInd1	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | AND | OR | ] | div | else | fi | mod	-	-	127	-	-	
+34	listInd1	[	-	+	128	-	-	
+35	callFunc	id	-	+	129	-	-	
+36	listExp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	133	-	-	
+37	listExp1	)	-	-	135	-	-	
+38	listExp1	,	-	+	136	-	-	
+39	Rel	=	-	-	138	-	-	
+40	Rel	!=	-	-	139	-	-	
+41	Rel	>	-	-	140	-	-	
+42	Rel	<	-	-	141	-	-	
+43	Rel	<=	-	-	142	-	-	
+44	Rel	>=	-	+	143	-	-	
+45	PLUSO	+	-	-	144	-	-	
+46	PLUSO	-	-	-	145	-	-	
+47	PLUSO	OR	-	+	146	-	-	
+48	MULO	AND	-	-	147	-	-	
+49	MULO	*	-	-	148	-	-	
+50	MULO	/	-	-	149	-	-	
+51	MULO	mod	-	-	150	-	-	
+52	MULO	div	-	+	151	-	-	
+53	Number	0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9	-	+	152	-	-	
+54	Number1	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | AND | OR | ] | div | else | fi | mod	-	-	154	-	-	
+55	Number1	0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9	-	+	155	-	-	
+56	Digit	0	-	-	156	-	-	
+57	Digit	1	-	-	157	-	-	
+58	Digit	2	-	-	158	-	-	
+59	Digit	4	-	-	159	-	-	
+60	Digit	5	-	-	160	-	-	
+61	Digit	6	-	-	161	-	-	
+62	Digit	7	-	-	162	-	-	
+63	Digit	8	-	-	163	-	-	
+64	Digit	9	-	-	164	-	-	
+65	Digit	3	-	+	165	-	-	
+66	Digit1	!= | # | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | AND | OR | ] | div | else | fi | mod	-	+	167	-	-	
+67	ass	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	3	+	-	
+68	#	#	-	+	NULL	-	+	
+69	if	if	-	+	4	+	-	
+70	#	#	-	+	NULL	-	+	
+71	Exp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	7	+	-	
+72	=	=	+	+	73	-	-	
+73	Exp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	7	-	-	
+74	if	if	+	+	75	-	-	
+75	Exp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	7	+	-	
+76	A	else | fi	-	+	5	+	-	
+77	fi	fi	+	+	NULL	-	-	
+78	e	fi	-	+	NULL	-	-	
+79	else	else	+	+	80	-	-	
+80	S	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | if | not | true	-	+	1	-	-	
+81	simexp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	10	+	-	
+82	Exp1	!= | # | ) | , | < | <= | = | > | >= | ] | else | fi	-	+	8	-	-	
+83	Rel	!= | < | <= | = | > | >=	-	+	39	+	-	
+84	simexp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	10	+	-	
+85	Exp1	!= | # | ) | , | < | <= | = | > | >= | ] | else | fi	-	+	8	-	-	
+86	e	# | ) | , | = | ] | else | fi	-	+	NULL	-	-	
+87	simterm	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	13	+	-	
+88	simexp1	!= | # | ) | + | , | - | < | <= | = | > | >= | OR | ] | else | fi	-	+	11	-	-	
+89	PLUSO	+ | - | OR	-	+	45	+	-	
+90	simterm	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	13	+	-	
+91	simexp1	!= | # | ) | + | , | - | < | <= | = | > | >= | OR | ] | else | fi	-	+	11	-	-	
+92	e	!= | # | ) | , | < | <= | = | > | >= | ] | else | fi	-	+	NULL	-	-	
+93	term	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	16	+	-	
+94	simterm1	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | AND | OR | ] | div | else | fi | mod	-	+	14	-	-	
+95	MULO	* | / | AND | div | mod	-	+	48	+	-	
+96	term	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	16	+	-	
+97	simterm1	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | AND | OR | ] | div | else | fi | mod	-	+	14	-	-	
+98	e	!= | # | ) | + | , | - | < | <= | = | > | >= | OR | ] | else | fi	-	+	NULL	-	-	
+99	+	+	+	+	100	-	-	
+100	term	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	16	-	-	
+101	-	-	+	+	102	-	-	
+102	term	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	16	-	-	
+103	(	(	+	+	104	-	-	
+104	Exp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	7	+	-	
+105	)	)	+	+	NULL	-	-	
+106	not	not	+	+	107	-	-	
+107	term	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	16	-	-	
+108	ident	id	-	+	24	-	-	
+109	Number	0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9	-	+	53	-	-	
+110	true	true	+	+	NULL	-	-	
+111	false	false	+	+	NULL	-	-	
+112	id	id	+	+	NULL	-	-	
+113	comid	id	-	+	28	-	-	
+114	idindx	id	-	+	31	-	-	
+115	callFunc	id	-	+	35	-	-	
+116	id	id	+	+	117	-	-	
+117	comid1	!= | # | ( | ) | * | + | , | - | . | / | < | <= | = | > | >= | AND | OR | [ | ] | div | else | fi | mod	-	+	29	-	-	
+118	e	!= | # | ( | ) | * | + | , | - | / | < | <= | = | > | >= | AND | OR | [ | ] | div | else | fi | mod	-	+	NULL	-	-	
+119	.	.	+	+	120	-	-	
+120	comid	id	-	+	28	-	-	
+121	comid	id	-	+	28	+	-	
+122	listInd	[	-	+	32	-	-	
+123	[	[	+	+	124	-	-	
+124	Exp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	7	+	-	
+125	]	]	+	+	126	-	-	
+126	listInd1	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | AND | OR | [ | ] | div | else | fi | mod	-	+	33	-	-	
+127	e	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | AND | OR | ] | div | else | fi | mod	-	+	NULL	-	-	
+128	listInd	[	-	+	32	-	-	
+129	comid	id	-	+	28	+	-	
+130	(	(	+	+	131	-	-	
+131	listExp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	36	+	-	
+132	)	)	+	+	NULL	-	-	
+133	Exp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	7	+	-	
+134	listExp1	) | ,	-	+	37	-	-	
+135	e	)	-	+	NULL	-	-	
+136	,	,	+	+	137	-	-	
+137	listExp	( | + | - | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | false | id | not | true	-	+	36	-	-	
+138	=	=	+	+	NULL	-	-	
+139	!=	!=	+	+	NULL	-	-	
+140	>	>	+	+	NULL	-	-	
+141	<	<	+	+	NULL	-	-	
+142	=	<=	+	+	NULL	-	-	
+143	=	>=	+	+	NULL	-	-	
+144	+	+	+	+	NULL	-	-	
+145	-	-	+	+	NULL	-	-	
+146	OR	OR	+	+	NULL	-	-	
+147	AND	AND	+	+	NULL	-	-	
+148	*	*	+	+	NULL	-	-	
+149	/	/	+	+	NULL	-	-	
+150	mod	mod	+	+	NULL	-	-	
+151	div	div	+	+	NULL	-	-	
+152	Digit	0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9	-	+	56	+	-	
+153	Number1	!= | # | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | AND | OR | ] | div | else | fi | mod	-	+	54	-	-	
+154	e	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | AND | OR | ] | div | else | fi | mod	-	+	NULL	-	-	
+155	Number	0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9	-	+	53	-	-	
+156	0	0	+	+	NULL	-	-	
+157	1	1	+	+	NULL	-	-	
+158	2	2	+	+	NULL	-	-	
+159	4	4	+	+	NULL	-	-	
+160	5	5	+	+	NULL	-	-	
+161	6	6	+	+	NULL	-	-	
+162	7	7	+	+	NULL	-	-	
+163	8	8	+	+	NULL	-	-	
+164	9	9	+	+	NULL	-	-	
+165	3	3	+	+	166	-	-	
+166	Digit1	!= | # | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | AND | OR | ] | div | else | fi | mod	-	+	66	-	-	
+167	e	!= | # | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | AND | OR | ] | div | else | fi | mod	-	+	NULL	-	-	

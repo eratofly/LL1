@@ -1,0 +1,260 @@
+index	symbol	directionSymbols	shift	error	pointer	stack	end
+1	S	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | false | g | h | i | id | id.<comid> | j | k | l | m | mod | n | not | o | p | q | r | s | t | true | u | v | w | x | y | z	-	+	117	-	-	
+2	Exp	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | false | g | h | i | id | id.<comid> | j | k | l | m | mod | n | not | o | p | q | r | s | t | true | u | v | w | x | y | z	-	+	119	-	-	
+3	Exp1	!= | < | <= | = | > | >=	-	-	121	-	-	
+4	Exp1	# | ) | , | ]	-	+	124	-	-	
+5	simexp	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | false | g | h | i | id | id.<comid> | j | k | l | m | mod | n | not | o | p | q | r | s | t | true | u | v | w | x | y | z	-	+	125	-	-	
+6	simexp1	+ | - | OR	-	-	127	-	-	
+7	simexp1	!= | # | ) | , | < | <= | = | > | >= | ]	-	+	130	-	-	
+8	simterm	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | false | g | h | i | id | id.<comid> | j | k | l | m | mod | n | not | o | p | q | r | s | t | true | u | v | w | x | y | z	-	+	131	-	-	
+9	simterm1	* | / | AND | div | mod	-	-	133	-	-	
+10	simterm1	!= | # | ) | + | , | - | < | <= | = | > | >= | OR | ]	-	+	136	-	-	
+11	term	+	-	-	137	-	-	
+12	term	-	-	-	139	-	-	
+13	term	(	-	-	141	-	-	
+14	term	not	-	-	144	-	-	
+15	term	id | id.<comid>	-	-	146	-	-	
+16	term	0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9	-	-	147	-	-	
+17	term	true	-	-	148	-	-	
+18	term	false	-	-	149	-	-	
+19	term	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | g | h | i | j | k | l | m | mod | n | o | p | q | r | s | t | u | v | w | x | y | z	-	+	150	-	-	
+20	ident	id	-	-	151	-	-	
+21	ident	id | id.<comid>	-	-	152	-	-	
+22	ident	id | id.<comid>	-	-	153	-	-	
+23	ident	id | id.<comid>	-	+	154	-	-	
+24	comid	id	-	-	155	-	-	
+25	comid	id.<comid>	-	+	156	-	-	
+26	idindx	id | id.<comid>	-	+	157	-	-	
+27	listInd	[	-	+	159	-	-	
+28	listInd1	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | AND | OR | ] | div | mod	-	-	163	-	-	
+29	listInd1	[	-	+	164	-	-	
+30	callFunc	id | id.<comid>	-	+	165	-	-	
+31	listExp	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | false | g | h | i | id | id.<comid> | j | k | l | m | mod | n | not | o | p | q | r | s | t | true | u | v | w | x | y | z	-	+	169	-	-	
+32	listExp1	)	-	-	171	-	-	
+33	listExp1	,	-	+	172	-	-	
+34	Rel	=	-	-	174	-	-	
+35	Rel	!=	-	-	175	-	-	
+36	Rel	>	-	-	176	-	-	
+37	Rel	<	-	-	177	-	-	
+38	Rel	<=	-	-	178	-	-	
+39	Rel	>=	-	+	179	-	-	
+40	PLUSO	+	-	-	180	-	-	
+41	PLUSO	-	-	-	181	-	-	
+42	PLUSO	OR	-	+	182	-	-	
+43	MULO	AND	-	-	183	-	-	
+44	MULO	*	-	-	184	-	-	
+45	MULO	/	-	-	185	-	-	
+46	MULO	mod	-	-	186	-	-	
+47	MULO	div	-	+	187	-	-	
+48	Number	0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9	-	+	188	-	-	
+49	Number1	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | AND | OR | ] | div | mod	-	-	190	-	-	
+50	Number1	0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9	-	+	191	-	-	
+51	Digit	0	-	-	192	-	-	
+52	Digit	1	-	-	193	-	-	
+53	Digit	2	-	-	194	-	-	
+54	Digit	4	-	-	195	-	-	
+55	Digit	5	-	-	196	-	-	
+56	Digit	6	-	-	197	-	-	
+57	Digit	7	-	-	198	-	-	
+58	Digit	8	-	-	199	-	-	
+59	Digit	9	-	-	200	-	-	
+60	Digit	3	-	+	201	-	-	
+61	Digit1	!= | # | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | AND | OR | ] | div | mod	-	+	203	-	-	
+62	string	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | g | h | i | j | k | l | m | mod | n | o | p | q | r | s | t | u | v | w | x | y | z	-	+	204	-	-	
+63	string1	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | AND | OR | ] | div | mod	-	-	206	-	-	
+64	string1	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | g | h | i | j | k | l | m | mod | n | o | p | q | r | s | t | u | v | w | x | y | z	-	+	207	-	-	
+65	char	a	-	-	208	-	-	
+66	char	b	-	-	209	-	-	
+67	char	c	-	-	210	-	-	
+68	char	d	-	-	211	-	-	
+69	char	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | g | h | i | j | k | l | m | mod | n | o | p | q | r | s | t | u | v | w | x | y | z	-	-	212	-	-	
+70	char	f	-	-	213	-	-	
+71	char	g	-	-	214	-	-	
+72	char	h	-	-	215	-	-	
+73	char	i	-	-	216	-	-	
+74	char	j	-	-	217	-	-	
+75	char	k	-	-	218	-	-	
+76	char	l	-	-	219	-	-	
+77	char	m	-	-	220	-	-	
+78	char	n	-	-	221	-	-	
+79	char	o	-	-	222	-	-	
+80	char	p	-	-	223	-	-	
+81	char	q	-	-	224	-	-	
+82	char	r	-	-	225	-	-	
+83	char	s	-	-	226	-	-	
+84	char	t	-	-	227	-	-	
+85	char	u	-	-	228	-	-	
+86	char	v	-	-	229	-	-	
+87	char	w	-	-	230	-	-	
+88	char	x	-	-	231	-	-	
+89	char	y	-	-	232	-	-	
+90	char	z	-	-	233	-	-	
+91	char	A	-	-	234	-	-	
+92	char	B	-	-	235	-	-	
+93	char	C	-	-	236	-	-	
+94	char	D	-	-	237	-	-	
+95	char	E	-	-	238	-	-	
+96	char	F	-	-	239	-	-	
+97	char	G	-	-	240	-	-	
+98	char	H	-	-	241	-	-	
+99	char	I	-	-	242	-	-	
+100	char	J	-	-	243	-	-	
+101	char	K	-	-	244	-	-	
+102	char	L	-	-	245	-	-	
+103	char	M	-	-	246	-	-	
+104	char	N	-	-	247	-	-	
+105	char	O	-	-	248	-	-	
+106	char	P	-	-	249	-	-	
+107	char	Q	-	-	250	-	-	
+108	char	R	-	-	251	-	-	
+109	char	S	-	-	252	-	-	
+110	char	T	-	-	253	-	-	
+111	char	U	-	-	254	-	-	
+112	char	V	-	-	255	-	-	
+113	char	W	-	-	256	-	-	
+114	char	X	-	-	257	-	-	
+115	char	Y	-	-	258	-	-	
+116	char	Z	-	+	259	-	-	
+117	Exp	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | false | g | h | i | id | id.<comid> | j | k | l | m | mod | n | not | o | p | q | r | s | t | true | u | v | w | x | y | z	-	+	2	+	-	
+118	#	#	-	+	NULL	-	+	
+119	simexp	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | false | g | h | i | id | id.<comid> | j | k | l | m | mod | n | not | o | p | q | r | s | t | true | u | v | w | x | y | z	-	+	5	+	-	
+120	Exp1	!= | # | ) | , | < | <= | = | > | >= | ]	-	+	3	-	-	
+121	Rel	!= | < | <= | = | > | >=	-	+	34	+	-	
+122	simexp	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | false | g | h | i | id | id.<comid> | j | k | l | m | mod | n | not | o | p | q | r | s | t | true | u | v | w | x | y | z	-	+	5	+	-	
+123	Exp1	!= | # | ) | , | < | <= | = | > | >= | ]	-	+	3	-	-	
+124	e	# | ) | , | ]	-	+	NULL	-	-	
+125	simterm	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | false | g | h | i | id | id.<comid> | j | k | l | m | mod | n | not | o | p | q | r | s | t | true | u | v | w | x | y | z	-	+	8	+	-	
+126	simexp1	!= | # | ) | + | , | - | < | <= | = | > | >= | OR | ]	-	+	6	-	-	
+127	PLUSO	+ | - | OR	-	+	40	+	-	
+128	simterm	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | false | g | h | i | id | id.<comid> | j | k | l | m | mod | n | not | o | p | q | r | s | t | true | u | v | w | x | y | z	-	+	8	+	-	
+129	simexp1	!= | # | ) | + | , | - | < | <= | = | > | >= | OR | ]	-	+	6	-	-	
+130	e	!= | # | ) | , | < | <= | = | > | >= | ]	-	+	NULL	-	-	
+131	term	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | false | g | h | i | id | id.<comid> | j | k | l | m | mod | n | not | o | p | q | r | s | t | true | u | v | w | x | y | z	-	+	11	+	-	
+132	simterm1	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | AND | OR | ] | div | mod	-	+	9	-	-	
+133	MULO	* | / | AND | div | mod	-	+	43	+	-	
+134	term	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | false | g | h | i | id | id.<comid> | j | k | l | m | mod | n | not | o | p | q | r | s | t | true | u | v | w | x | y | z	-	+	11	+	-	
+135	simterm1	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | AND | OR | ] | div | mod	-	+	9	-	-	
+136	e	!= | # | ) | + | , | - | < | <= | = | > | >= | OR | ]	-	+	NULL	-	-	
+137	+	+	+	+	138	-	-	
+138	term	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | false | g | h | i | id | id.<comid> | j | k | l | m | mod | n | not | o | p | q | r | s | t | true | u | v | w | x | y | z	-	+	11	-	-	
+139	-	-	+	+	140	-	-	
+140	term	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | false | g | h | i | id | id.<comid> | j | k | l | m | mod | n | not | o | p | q | r | s | t | true | u | v | w | x | y | z	-	+	11	-	-	
+141	(	(	+	+	142	-	-	
+142	Exp	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | false | g | h | i | id | id.<comid> | j | k | l | m | mod | n | not | o | p | q | r | s | t | true | u | v | w | x | y | z	-	+	2	+	-	
+143	)	)	+	+	NULL	-	-	
+144	not	not	+	+	145	-	-	
+145	term	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | false | g | h | i | id | id.<comid> | j | k | l | m | mod | n | not | o | p | q | r | s | t | true | u | v | w | x | y | z	-	+	11	-	-	
+146	ident	id | id.<comid>	-	+	20	-	-	
+147	Number	0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9	-	+	48	-	-	
+148	true	true	+	+	NULL	-	-	
+149	false	false	+	+	NULL	-	-	
+150	string	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | g | h | i | j | k | l | m | mod | n | o | p | q | r | s | t | u | v | w | x | y | z	-	+	62	-	-	
+151	id	id	+	+	NULL	-	-	
+152	comid	id | id.<comid>	-	+	24	-	-	
+153	idindx	id | id.<comid>	-	+	26	-	-	
+154	callFunc	id | id.<comid>	-	+	30	-	-	
+155	id	id	+	+	NULL	-	-	
+156	id.comid	id.<comid>	+	+	NULL	-	-	
+157	comid	id | id.<comid>	-	+	24	+	-	
+158	listInd	[	-	+	27	-	-	
+159	[	[	+	+	160	-	-	
+160	Exp	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | false | g | h | i | id | id.<comid> | j | k | l | m | mod | n | not | o | p | q | r | s | t | true | u | v | w | x | y | z	-	+	2	+	-	
+161	]	]	+	+	162	-	-	
+162	listInd1	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | AND | OR | [ | ] | div | mod	-	+	28	-	-	
+163	e	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | AND | OR | ] | div | mod	-	+	NULL	-	-	
+164	listInd	[	-	+	27	-	-	
+165	comid	id | id.<comid>	-	+	24	+	-	
+166	(	(	+	+	167	-	-	
+167	listExp	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | false | g | h | i | id | id.<comid> | j | k | l | m | mod | n | not | o | p | q | r | s | t | true | u | v | w | x | y | z	-	+	31	+	-	
+168	)	)	+	+	NULL	-	-	
+169	Exp	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | false | g | h | i | id | id.<comid> | j | k | l | m | mod | n | not | o | p | q | r | s | t | true | u | v | w | x | y | z	-	+	2	+	-	
+170	listExp1	) | ,	-	+	32	-	-	
+171	e	)	-	+	NULL	-	-	
+172	,	,	+	+	173	-	-	
+173	listExp	!= | # | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | false | g | h | i | id | id.<comid> | j | k | l | m | mod | n | not | o | p | q | r | s | t | true | u | v | w | x | y | z	-	+	31	-	-	
+174	=	=	+	+	NULL	-	-	
+175	!=	!=	+	+	NULL	-	-	
+176	>	>	+	+	NULL	-	-	
+177	<	<	+	+	NULL	-	-	
+178	=	<=	+	+	NULL	-	-	
+179	=	>=	+	+	NULL	-	-	
+180	+	+	+	+	NULL	-	-	
+181	-	-	+	+	NULL	-	-	
+182	OR	OR	+	+	NULL	-	-	
+183	AND	AND	+	+	NULL	-	-	
+184	*	*	+	+	NULL	-	-	
+185	/	/	+	+	NULL	-	-	
+186	mod	mod	+	+	NULL	-	-	
+187	div	div	+	+	NULL	-	-	
+188	Digit	0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9	-	+	51	+	-	
+189	Number1	!= | # | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | AND | OR | ] | div | mod	-	+	49	-	-	
+190	e	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | AND | OR | ] | div | mod	-	+	NULL	-	-	
+191	Number	0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9	-	+	48	-	-	
+192	0	0	+	+	NULL	-	-	
+193	1	1	+	+	NULL	-	-	
+194	2	2	+	+	NULL	-	-	
+195	4	4	+	+	NULL	-	-	
+196	5	5	+	+	NULL	-	-	
+197	6	6	+	+	NULL	-	-	
+198	7	7	+	+	NULL	-	-	
+199	8	8	+	+	NULL	-	-	
+200	9	9	+	+	NULL	-	-	
+201	3	3	+	+	202	-	-	
+202	Digit1	!= | # | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | AND | OR | ] | div | mod	-	+	61	-	-	
+203	e	!= | # | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | < | <= | = | > | >= | AND | OR | ] | div | mod	-	+	NULL	-	-	
+204	char	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | g | h | i | j | k | l | m | mod | n | o | p | q | r | s | t | u | v | w | x | y | z	-	+	65	+	-	
+205	string1	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | g | h | i | j | k | l | m | mod | n | o | p | q | r | s | t | u | v | w | x | y | z	-	+	63	-	-	
+206	e	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | AND | OR | ] | div | mod	-	+	NULL	-	-	
+207	string	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | g | h | i | j | k | l | m | mod | n | o | p | q | r | s | t | u | v | w | x | y | z	-	+	62	-	-	
+208	a	a	+	+	NULL	-	-	
+209	b	b	+	+	NULL	-	-	
+210	c	c	+	+	NULL	-	-	
+211	d	d	+	+	NULL	-	-	
+212	e	!= | # | ) | * | + | , | - | / | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | f | g | h | i | j | k | l | m | mod | n | o | p | q | r | s | t | u | v | w | x | y | z	-	+	NULL	-	-	
+213	f	f	+	+	NULL	-	-	
+214	g	g	+	+	NULL	-	-	
+215	h	h	+	+	NULL	-	-	
+216	i	i	+	+	NULL	-	-	
+217	j	j	+	+	NULL	-	-	
+218	k	k	+	+	NULL	-	-	
+219	l	l	+	+	NULL	-	-	
+220	m	m	+	+	NULL	-	-	
+221	n	n	+	+	NULL	-	-	
+222	o	o	+	+	NULL	-	-	
+223	p	p	+	+	NULL	-	-	
+224	q	q	+	+	NULL	-	-	
+225	r	r	+	+	NULL	-	-	
+226	s	s	+	+	NULL	-	-	
+227	t	t	+	+	NULL	-	-	
+228	u	u	+	+	NULL	-	-	
+229	v	v	+	+	NULL	-	-	
+230	w	w	+	+	NULL	-	-	
+231	x	x	+	+	NULL	-	-	
+232	y	y	+	+	NULL	-	-	
+233	z	z	+	+	NULL	-	-	
+234	A	A	+	+	NULL	-	-	
+235	B	B	+	+	NULL	-	-	
+236	C	C	+	+	NULL	-	-	
+237	D	D	+	+	NULL	-	-	
+238	E	E	+	+	NULL	-	-	
+239	F	F	+	+	NULL	-	-	
+240	G	G	+	+	NULL	-	-	
+241	H	H	+	+	NULL	-	-	
+242	I	I	+	+	NULL	-	-	
+243	J	J	+	+	NULL	-	-	
+244	K	K	+	+	NULL	-	-	
+245	L	L	+	+	NULL	-	-	
+246	M	M	+	+	NULL	-	-	
+247	N	N	+	+	NULL	-	-	
+248	O	O	+	+	NULL	-	-	
+249	P	P	+	+	NULL	-	-	
+250	Q	Q	+	+	NULL	-	-	
+251	R	R	+	+	NULL	-	-	
+252	S	S	+	+	NULL	-	-	
+253	T	T	+	+	NULL	-	-	
+254	U	U	+	+	NULL	-	-	
+255	V	V	+	+	NULL	-	-	
+256	W	W	+	+	NULL	-	-	
+257	X	X	+	+	NULL	-	-	
+258	Y	Y	+	+	NULL	-	-	
+259	Z	Z	+	+	NULL	-	-	
