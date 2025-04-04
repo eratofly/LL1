@@ -1,7 +1,7 @@
 #pragma once
-#include <stdexcept>
-#include <iostream>
 #include "Rule.h"
+#include <iostream>
+#include <stdexcept>
 
 std::set<std::string> DefineNonTerminalDirectionSymbols(const std::string& nonTerminalName, const std::vector<Rule>& rules);
 

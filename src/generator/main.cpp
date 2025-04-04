@@ -46,7 +46,7 @@ int main(int argc, char* argv[])
         {
             std::cout << "/ ";
         }
-        for (const std::string s : rule.directionSymbols)
+        for (const std::string& s : rule.directionSymbols)
         {
             std::cout << s << " ";
         }

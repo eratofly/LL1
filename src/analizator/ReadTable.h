@@ -9,7 +9,7 @@
 #include "StringHelpers.h"
 
 static const auto NULL_POINTER_STRING = "NULL";
-static const auto DIRECTED_SYMBOLS_SEPARATOR = " \| ";
+static const auto DIRECTED_SYMBOLS_SEPARATOR = " | ";
 
 std::vector<TableRow> ReadTable(const std::string& grammarFileName);
 TableRow ReadTableRow(const std::string& tableRowStr);

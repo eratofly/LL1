@@ -1,4 +1,5 @@
 #include "Analizator.h"
+#include "../lexer/Lexer.h"
 
 std::vector<std::string> tokens;
 
@@ -47,13 +48,15 @@ void Analyze(const Table table, const std::string& inputFileName)
 {
 	GenerateTokensFromFile(inputFileName);
 
+	int pos = 0;
 	size_t current = 0;
 	std::vector<size_t> stack;
 	bool isAnalyzed = true;
 	while (isAnalyzed)
 	{
+		++pos;
 		TableRow state = table[current];
-		bool isDirectionSymbol = std::find(state.directionSymbols.begin(), state.directionSymbols.end(), ReadToken().value()) != state.directionSymbols.end();
+		bool isDirectionSymbol = std::ranges::find(state.directionSymbols, ReadToken().value()) != state.directionSymbols.end();
 		if (isDirectionSymbol && stack.empty() && state.end)
 		{
 			isAnalyzed = false;
@@ -61,7 +64,7 @@ void Analyze(const Table table, const std::string& inputFileName)
 		}
 		if (!isDirectionSymbol && state.error)
 		{
-			std::string msg = ReadToken().value() + " is incorrect symbol";
+			std::string msg = ReadToken().value() + " is incorrect symbol in position " + std::to_string(pos - 1);
 			throw std::runtime_error(msg);
 		}
 		if (!isDirectionSymbol)
@@ -77,7 +80,7 @@ void Analyze(const Table table, const std::string& inputFileName)
 		{
 			stack.push_back(current + 1);
 		}
-		if (isDirectionSymbol && state.pointer.has_value())
+		if (state.pointer.has_value())
 		{
 			current = state.pointer.value();
 		}

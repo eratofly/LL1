@@ -2,8 +2,8 @@
 #include <istream>
 #include <map>
 
-#include "Rule.h"
 #include "GetDirectionSymbols.h"
+#include "Rule.h"
 #include "StringHelpers.h"
 
 static const auto RIGHT_PART_RULES_SEPARATOR = "|";
@@ -20,15 +20,15 @@ void RemoveLeftRecursion(std::vector<Rule>& rules);
 std::string GetNameForNewRuleWithoutSamePrefix(const std::string& nonTerminalName, const std::vector<Rule>& rules, const std::vector<Rule>& newRules);
 
 std::pair<std::vector<std::string>, std::vector<Rule>> DefineSamePrefixAndRules(
-    size_t index,
-    const std::vector<std::string>& prefix,
-    const std::vector<Rule>& rulesWithPrefix);
+	size_t index,
+	const std::vector<std::string>& prefix,
+	const std::vector<Rule>& rulesWithPrefix);
 
 void AddNewRulesAfterPrefix(
-    std::vector<Rule>& rulesWithPrefix,
-    const std::string& newNonTerminal,
-    const size_t beginIndex,
-    std::vector<Rule>& rules);
+	std::vector<Rule>& rulesWithPrefix,
+	const std::string& newNonTerminal,
+	const size_t beginIndex,
+	std::vector<Rule>& rules);
 
 void Factorization(std::vector<Rule>& rules, const std::string& nonTerminalName, bool& hasChanges, std::vector<Rule>& newRules);
 

@@ -12,9 +12,13 @@ enable_testing()
 
 add_executable(ll1_program
         src/main.cpp
+        cmake-build-debug/src/analizator/grammar43.txt
 )
 
 #add_executable(ll1_tests
 #)
 
 #target_link_libraries(parser_tests PUBLIC catch2)
+
+add_subdirectory(src/generator)
+add_subdirectory(src/analizator)
