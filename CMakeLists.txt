@@ -10,10 +10,10 @@ enable_testing()
 #        catch2 INTERFACE lib/catch2
 #)
 
-add_executable(ll1_program
-        src/main.cpp
-        cmake-build-debug/src/analizator/grammar43.txt
-)
+#add_executable(ll1_program
+#        src/main.cpp
+#        cmake-build-debug/src/analizator/grammar43.txt
+#)
 
 #add_executable(ll1_tests
 #)
@@ -22,3 +22,4 @@ add_executable(ll1_program
 
 add_subdirectory(src/generator)
 add_subdirectory(src/analizator)
+add_subdirectory(slr)

@@ -1,4 +1,4 @@
-index	symbol	directionSymbols	shift	error	pointer	stack	end
+    index	symbol	directionSymbols	shift	error	pointer	stack	end
 1	S	if	-	+	114	-	-	
 2	Exp	!= | ( | ) | * | + | , | - | / | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | ; | < | <= | = | > | >= | A | AND | B | C | D | E | F | G | H | I | J | K | L | M | N | O | OR | P | Q | R | S | T | U | V | W | X | Y | Z | ] | a | b | c | d | div | else | f | false | g | h | i | id | j | k | l | m | mod | n | not | o | p | q | r | s | t | then | true | u | v | w | x | y | z	-	+	122	-	-	
 3	Exp1	!= | < | <= | = | > | >=	-	-	124	-	-	
