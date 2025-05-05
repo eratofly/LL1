@@ -45,7 +45,7 @@ _comparison_expr_ → _additive_expr_ | _additive_expr_ _additive_expr_sign_ _ad
 
 _comparison_expr_sign_ → **&&** | **||**
 
-_additive_expr_sign_ → **==** | **!=** | **<** | **>** | **<=** | **>=**
+_additive_expr_sign_ → **=** | **!=** | **<** | **>** | **<=** | **>=**
 
 _additive_expr_ → _multiplicative_expr_ | _multiplicative_expr_ _multiplicative_expr_sign_ _multiplicative_expr_
 
@@ -62,6 +62,8 @@ _init_statement_ → _variable_decl_ | _assignment_ | e
 _condition_ → _expression_ | e
 
 _post_statement_ → _assignment_ | e
+
+продумать 
 
 
 ## Генерация простых чисел
