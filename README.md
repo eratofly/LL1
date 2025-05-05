@@ -4,7 +4,9 @@ _program_ → _statement_ | _e_
 
 _statement_ → _variable_decl_ | _assignment_ | _if_assignment_ | _for_loop_ | _while_loop_ | _function_decl_ | _function_call_ | print_call | _e_
 
-_variable_decl_ → **var** _type_ **identifier** **:=** _expression_ **;**
+_variable_decl_ → _variable_decl_type_ _type_ **identifier** **:=** _expression_ **;**
+
+_variable_decl_type_ → **var** | **const**
 
 _assignment_ → **identifier** **:=** _expression_**;**
 

@@ -3,7 +3,7 @@ fun isPrime(n: int) : bool {
         return false;
     }
 
-    var int i:= 2;
+    var int i := 2;
     while (i * i <= n) {
         if (n % i == 0) {
             return false;
