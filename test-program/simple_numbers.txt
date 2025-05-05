@@ -5,23 +5,24 @@ fun isPrime(n: int) : bool {
 
     var int i := 2;
     while (i * i <= n) {
-        if (n % i == 0) {
+        if (n % i = 0) {
             return false;
         }
-        i = i + 1;
+        i := i + 1;
     }
 
     return true;
 }
 
-func findPrimesInRange(start: int, end: int) {
+// Печатает простые числа
+fun printPrimesInRange(start : int, end: int) {
     var int current := start;
 
-    for (; current <= end; current = current + 1) {
+    for (; current <= end; current := current + 1) {
         if (isPrime(current)) {
             print current;
         }
     }
 }
 
-findPrimesInRange(10, 50);
+printPrimesInRange(10, 50);
