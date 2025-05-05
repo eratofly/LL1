@@ -18,7 +18,7 @@ _function_decl_ → **fun** **identifier** **(** _parameters_ **)** **:** _type_
 
 _function_call_ → **identifier** ( arguments )**;**
 
-print_call → **print** **identifier** | **print** string
+print_call → **print** **identifier****;** | **print** string**;**
 //тут бы добавить конкатенацию, но пока нет
 
 _parameters_ → _parameters_list_ | _parameter_ | _e_
@@ -53,7 +53,7 @@ _multiplicative_expr_ → _primary_expr_ | _primary_expr_ _primary_expr_sign_ _p
 
 _primary_expr_sign_ → * | **/** | **%**
 
-_primary_expr_ → _number_ | **identifier** | _function_call_ | **(** _expression_ **)** | **!** _primary_expr_
+_primary_expr_ → _number_ | **identifier** | _function_call_ | _expression_ | **!** _primary_expr_
 
 _init_statement_ → _variable_decl_ | _assignment_ | e
 
