@@ -35,9 +35,7 @@ _argument_ → **identifier**
 
 _type_ → **int** | **bool** | **float** | **string** | **void**
 
-_expression_ → _logical_expr_
-
-_logical_expr_ → _comparison_expr_ | _comparison_expr_list_
+_expression_ → _comparison_expr_ | _comparison_expr_list_
 
 _comparison_expr_list_ → **(** _comparison_expr_ **)** _comparison_expr_sign_ _comparison_expr_list_ | **(** _comparison_expr_ **)**
 

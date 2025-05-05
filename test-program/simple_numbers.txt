@@ -1,0 +1,27 @@
+fun isPrime(n: int) : bool {
+    if (n <= 1) {
+        return false;
+    }
+
+    var int i:= 2;
+    while (i * i <= n) {
+        if (n % i == 0) {
+            return false;
+        }
+        i = i + 1;
+    }
+
+    return true;
+}
+
+func findPrimesInRange(start: int, end: int) {
+    var int current := start;
+
+    for (; current <= end; current = current + 1) {
+        if (isPrime(current)) {
+            print current;
+        }
+    }
+}
+
+findPrimesInRange(10, 50);
