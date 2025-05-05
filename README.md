@@ -62,3 +62,33 @@ _init_statement_ → _variable_decl_ | _assignment_ | e
 _condition_ → _expression_ | e
 
 _post_statement_ → _assignment_ | e
+
+
+## Генерация простых чисел
+
+```
+var int start := 10;
+var int end := 50;
+
+fun isPrime(n : int) : bool {
+    if (n <= 1) {
+        return false;
+    }
+    var int i := 2;
+    while (i * i <= n) {
+        if (n % i == 0) {
+            return false;
+        }
+        i := i + 1;
+    }
+    return true;
+}
+
+var int current := start;
+while (current <= end) {
+    if (isPrime(current)) {
+        print(current);
+    }
+    current := current + 1;
+}
+```
